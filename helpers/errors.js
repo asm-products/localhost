@@ -3,13 +3,19 @@ module.exports = function (app) {
 
   // catch unhandled requests
   app.use(function (req, res, next) {
-    app.errors.notfound(req, res);
+    app.errors.notfound(res);
   });
 
   // print 404
-  app.errors.notfound = function (req, res) {
+  app.errors.notfound = function (res) {
     res.status(404);
     return res.json({ message: 'Not found' });
+  }
+
+  // not authenticated
+  app.errors.auth = function (res) {
+    res.status(403);
+    return res.json({ message: 'Access denied' });
   }
 
   // server errors

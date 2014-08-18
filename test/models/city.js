@@ -36,7 +36,7 @@ module.exports = function (app) {
           assert.equal(err.errors.name.type, 'required');
           assert.equal(err.errors.country.type, 'required');
         },
-        'shoud not return city': function (err, city) {
+        'should not return city': function (err, city) {
           assert.isUndefined(city);
         }
       }

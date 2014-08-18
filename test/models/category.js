@@ -34,7 +34,7 @@ module.exports = function (app) {
           assert.equal(err.name, 'ValidationError');
           assert.equal(err.errors.name.type, 'required');
         },
-        'shoud not return category': function (err, category) {
+        'should not return category': function (err, category) {
           assert.isUndefined(category);
         }
       }

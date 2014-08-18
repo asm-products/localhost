@@ -1,9 +1,9 @@
 module.exports = function (app) {
-  // setup category schema
+  // setup city schema
   var citySchema = app.db.Schema({
-    name: { type: String, required: true },
-    country: { type: String, required: true },
-    active: { type: Boolean, default: false }
+    name:     { type: String, required: true },
+    country:  { type: String, required: true },
+    active:   { type: Boolean, default: false }
   });
 
   // return the model

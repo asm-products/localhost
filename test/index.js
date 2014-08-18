@@ -48,6 +48,7 @@ vows.describe('localhost').addBatch({
 })
 .addBatch(require('./models/category')(app, helpers))
 .addBatch(require('./models/city')(app, helpers))
+.addBatch(require('./models/user')(app, helpers))
 .addBatch(require('./routes/category')(app, helpers))
 .addBatch(require('./routes/city')(app, helpers))
 .addBatch({
