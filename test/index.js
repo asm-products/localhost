@@ -1,4 +1,5 @@
 var assert = require('assert'),
+    passportStub = require('passport-stub'),
     vows = require('vows');
 
 // override env settings
@@ -9,6 +10,8 @@ process.env.DB_URL = 'mongodb://localhost/localhost_test';
 var app = require('../app'),
     helpers = require('./helpers'),
     seed = require('./seed');
+
+passportStub.install(app);
 
 vows.describe('localhost').addBatch({
   'Server': {
@@ -51,6 +54,7 @@ vows.describe('localhost').addBatch({
 .addBatch(require('./models/user')(app, helpers))
 .addBatch(require('./routes/category')(app, helpers))
 .addBatch(require('./routes/city')(app, helpers))
+.addBatch(require('./routes/user')(app, helpers))
 .addBatch({
   'Database': {
     topic: function () {

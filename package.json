@@ -23,8 +23,9 @@
     "passport-facebook": "1.0.3"
   },
   "devDependencies": {
+    "passport-stub": "^1.0.1",
+    "promise": "5.0.0",
     "request": "2.40.0",
-    "vows": "0.7.0",
-    "promise": "5.0.0"
+    "vows": "0.7.0"
   }
 }
